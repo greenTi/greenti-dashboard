@@ -1,0 +1,26 @@
+{
+  "name": "greenti-dashboard",
+  "version": "1.0.0",
+  "description": "greenti my account ",
+  "main": "index.js",
+  "scripts": {
+    "serve": "lite-server",
+    "js": "simplifyify ./src/js/app.js -o ./dist/js/app.js -m",
+    "js:watch": "npm run js -- -w",
+    "sass": "node-sass ./src/sass/styles.sass -o ./dist/css/",
+    "sass:watch": "npm run sass -- -w",
+    "predev": "npm run js && npm run sass",
+    "dev": "npm-run-all --parallel serve js:watch sass:watch"
+  },
+  "author": "Benjamin Caradeuc <bencrdc@gmail.com> (http://caradeuc.info)",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.2.2",
+    "node-sass": "^3.8.0",
+    "npm-run-all": "^2.3.0",
+    "simplifyify": "^2.0.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}
