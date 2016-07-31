@@ -16,7 +16,7 @@
             text-align: center
             padding: .8rem 1rem .5rem 1rem
             font-size: 1.3rem
-            color: $green
+            color: $pink
             text-transform: capitalize
 
         &.card-divider
@@ -27,12 +27,12 @@
             
         &.card-disabled, &.card-disabled:hover
             color: lighten($dark, 50%)
-            // pointer-events: none
             cursor: not-allowed
 
         &.card-hoverable
+            transition: background-color .3s
             &:hover
-                background-color: darken($white, 5%)
+                background-color: $white
                 cursor: pointer
             &:active
                 background-color: darken($white, 15%)
