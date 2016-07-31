@@ -2,7 +2,8 @@
   "port": 8888,
   "files": [
     "./index.html", 
-    "./dist/**/*.{css,js}"
+    "./dist/**/*.{css,js}",
+    "./tpl/**/*.html"
     ],
   "server": { 
     "baseDir": "./" 

@@ -1,0 +1,29 @@
+.page
+    background-color: white
+    position: absolute
+    left: 0
+    top: 30px
+    bottom: 0
+    width: 100%
+
+    &.ng-enter
+        animation: slideInRight .5s both ease-in
+
+    &.ng-leave
+        animation: slideOutLeft .5s both ease-in
+
+
+//  slide in from the right
+@keyframes slideInRight
+    from
+        transform: translateX(100%)
+    to
+        transform: translateX(0)
+        
+//  slide in from the right
+@keyframes slideOutLeft
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-100%)
+

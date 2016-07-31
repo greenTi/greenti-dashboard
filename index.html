@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" ng-app="dashboard">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GreenTi Dashboard</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="dist/css/styles.css">
 </head>
 <body>
-    
-    <h1>Hello World!</h1>
 
-    <div id="app"></div>
+    <div class="menu">
+        <a href="#!/home" class="menu-item">Accueil</a>
+        <a href="#!/cart" class="menu-item">Liste de courses</a>
+        <a href="#!/about" class="menu-item">A propos</a>
+    </div>
+
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="page {{ pageClass }}" ng-view></div>
 
     <script src="dist/js/app.js"></script>
 </body>
