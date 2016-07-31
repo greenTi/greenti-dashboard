@@ -9,7 +9,6 @@
     "js:watch": "npm run js -- -w",
     "sass": "node-sass -i --output-style=compressed --source-map=true ./src/sass/styles.sass -o ./dist/css/",
     "sass:watch": "npm run sass -- -w",
-    "predev": "npm run js && npm run sass",
     "dev": "npm-run-all --parallel serve js:watch sass:watch"
   },
   "author": "Benjamin Caradeuc <bencrdc@gmail.com> (http://caradeuc.info)",
