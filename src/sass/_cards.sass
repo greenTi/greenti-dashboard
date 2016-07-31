@@ -1,0 +1,40 @@
+.card
+    background-color: lighten($white, 10%)
+    box-shadow: 0 2px 5px rgba($dark, .3)
+    border-radius: .2rem
+    overflow: hidden
+
+    & > div
+        padding: .5rem 1rem
+
+        &:not(:last-child)
+            &.card-line, &.card-header, &.card-disabled
+                border-bottom: 1px solid rgba($dark, .2)
+        
+        &.card-header
+            font-weight: bold
+            text-align: center
+            padding: .8rem 1rem .5rem 1rem
+            font-size: 1.3rem
+            color: $green
+            text-transform: capitalize
+
+        &.card-divider
+            background-color: darken($white, 10%)
+            color: lighten($dark, 25%)
+            padding: .1rem 1rem
+            border-bottom: none!important
+            
+        &.card-disabled, &.card-disabled:hover
+            color: lighten($dark, 50%)
+            // pointer-events: none
+            cursor: not-allowed
+
+        &.card-hoverable
+            &:hover
+                background-color: darken($white, 5%)
+                cursor: pointer
+            &:active
+                background-color: darken($white, 15%)
+
+        

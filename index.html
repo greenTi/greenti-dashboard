@@ -9,10 +9,10 @@
 </head>
 <body>
 
-    <div class="menu">
-        <a href="#!/home" class="menu-item">Accueil</a>
-        <a href="#!/cart" class="menu-item">Liste de courses</a>
-        <a href="#!/about" class="menu-item">A propos</a>
+    <div class="menu" ng-controller="navCtrl">
+        <a href="#!/home" class="menu-item" ng-class="{ active: isActive('/home')}">Accueil</a>
+        <a href="#!/cart" class="menu-item" ng-class="{ active: isActive('/cart')}">Liste de courses</a>
+        <a href="#!/about" class="menu-item" ng-class="{ active: isActive('/about')}">A propos</a>
     </div>
 
     <!--[if lt IE 7]>

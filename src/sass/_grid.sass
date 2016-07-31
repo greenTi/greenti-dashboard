@@ -1,0 +1,25 @@
+.grid
+    position: relative
+    display: block
+    font-size: 0
+
+    & > div
+        font-size: 1rem
+        display: inline-block
+        position: relative
+        vertical-align: top
+        padding: .5rem
+
+        @for $i from 1 through 8
+            &.col-#{$i}
+                width: 100% / $i
+        
+        @media(max-width: 1200px)
+            @for $i from 1 through 8
+                &.col-#{$i}-m
+                    width: 100% / $i
+
+        @media(max-width: 800px)
+            @for $i from 1 through 8
+                &.col-#{$i}-s
+                    width: 100% / $i

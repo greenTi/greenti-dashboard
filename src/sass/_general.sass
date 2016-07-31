@@ -1,0 +1,54 @@
+body
+    background: $dark
+    color: $dark
+
+.menu
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: $sidebar-width
+    background: $dark
+    z-index: 1
+    border-right: 2px solid $dark
+    
+    a
+        color: $white
+        display: block
+        padding: 1rem
+        text-decoration: none
+        font-size: 1.1rem
+        font-weight: bold
+
+        &:hover
+            background: lighten($dark, 5%)
+
+        &.active
+            border-right: 5px solid $green
+            color: $green
+
+.page
+    position: absolute
+    top: 0
+    width: calc(100% - #{$sidebar-width})
+    margin-left: $sidebar-width
+    background: $white
+    overflow: auto
+    min-height: 100%
+    border-right: 1px solid $dark
+
+    header
+        padding: 1rem
+        border-bottom: 2px solid $dark
+        font-size: 1.6rem
+        text-align: center
+        background-color: $green
+        color: $white
+        text-transform: uppercase
+    
+    .content
+        padding: 1rem
+    
+
+
+
