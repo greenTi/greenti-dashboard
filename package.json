@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "serve": "lite-server",
-    "js": "simplifyify ./src/js/app.js -o ./dist/js/app.js -m",
+    "js": "simplifyify -m -d ./src/js/app.js -o ./dist/js/app.js ",
     "js:watch": "npm run js -- -w",
-    "sass": "node-sass ./src/sass/styles.sass -o ./dist/css/",
+    "sass": "node-sass -i --output-style=compressed --source-map=true ./src/sass/styles.sass -o ./dist/css/",
     "sass:watch": "npm run sass -- -w",
     "predev": "npm run js && npm run sass",
     "dev": "npm-run-all --parallel serve js:watch sass:watch"
@@ -21,6 +21,7 @@
     "simplifyify": "^2.0.1"
   },
   "dependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
   }
 }
