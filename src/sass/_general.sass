@@ -1,54 +1,41 @@
 body
     background: $dark
-    color: $dark
+    color: $dark        
 
-.menu
-    position: fixed
-    top: 0
-    left: 0
-    height: 100%
-    width: $sidebar-width
-    background: $dark
-    z-index: 1
-    border-right: 2px solid $dark
-    
-    a
-        color: $white
-        display: block
-        padding: 1rem
-        text-decoration: none
-        font-size: 1.1rem
-        font-weight: bold
+    .page
+        position: absolute
+        top: 0
+        width: calc(100% - #{$sidebar-width})
+        margin-left: $sidebar-width
+        background: $white
+        min-height: 100%
 
-        &:hover
-            background: lighten($dark, 5%)
+        header
+            padding: 1rem
+            box-shadow: 0 2px 5px rgba($dark, .3)
+            font-size: 1.6rem
+            text-align: center
+            background-color: $green
+            color: $white
+        
+        .content
+            padding: .5rem
+            max-width: $medium-size
+            margin: 0 auto
+            @media(max-width: $small-size)
+                padding: 0rem
+            
 
-        &.active
-            border-right: 5px solid $green
-            color: $green
-
-.page
-    position: absolute
-    top: 0
-    width: calc(100% - #{$sidebar-width})
-    margin-left: $sidebar-width
-    background: $white
-    overflow: auto
-    min-height: 100%
-    border-right: 1px solid $dark
-
-    header
-        padding: 1rem
-        border-bottom: 2px solid $dark
-        font-size: 1.6rem
-        text-align: center
-        background-color: $green
-        color: $white
-        text-transform: uppercase
-    
-    .content
-        padding: 1rem
-    
+    @media(max-width: $small-size)
+        .page
+            width: 100%
+            margin-left: 0
+            transform: translateX(0)
+            transition: transform .3s
+        &.menu-visible
+            .page
+                transform: translateX($sidebar-width)
+                
 
 
 

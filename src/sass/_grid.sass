@@ -8,18 +8,40 @@
         display: inline-block
         position: relative
         vertical-align: top
-        padding: .5rem
+        padding: .6rem .5rem
+
+        &.no-gutter
+            padding:.5rem 0!important
+        
+        &.push-0
+            margin-left: 0
 
         @for $i from 1 through 8
-            &.col-#{$i}
-                width: 100% / $i
+            @for $j from 1 through 8
+                &.col-#{$i}-#{$j}
+                    width: 100% * $i / $j
+                &.push-#{$i}-#{$j}
+                    margin-left: 100% * $i / $j
         
-        @media(max-width: 1200px)
+        @media(max-width: $medium-size)
             @for $i from 1 through 8
-                &.col-#{$i}-m
-                    width: 100% / $i
+                @for $j from 1 through 8
+                    &.col-#{$i}-#{$j}-m
+                        width: 100% * $i / $j
+                    &.push-#{$i}-#{$j}-m
+                        margin-left: 100% * $i / $j
+            &.push-0-m
+                margin-left: 0
 
-        @media(max-width: 800px)
+        @media(max-width: $small-size)
             @for $i from 1 through 8
-                &.col-#{$i}-s
-                    width: 100% / $i
+                @for $j from 1 through 8
+                    &.col-#{$i}-#{$j}-s
+                        width: 100% * $i / $j
+                    &.push-#{$i}-#{$j}-s
+                        margin-left: 100% * $i / $j
+            &.push-0-s
+                margin-left: 0
+
+        &.push-0
+            margin-left: 0

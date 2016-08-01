@@ -9,9 +9,9 @@
 </head>
 <body>
 
-    <div class="menu" ng-controller="navCtrl">
-        <a href="#!/home" class="menu-item" ng-class="{ active: isActive('/home')}">Accueil</a>
-        <a href="#!/cart" class="menu-item" ng-class="{ active: isActive('/cart')}">Liste de courses</a>
+    <div class="menu" ng-controller="navCtrl" ng-click="toggleMenu()">
+        <a href="#!/home" class="menu-item" ng-class="{ active: isActive('/home')}">Ma poubelle</a>
+        <a href="#!/cart" class="menu-item" ng-class="{ active: isActive('/cart')}">Ma Liste de courses</a>
         <a href="#!/about" class="menu-item" ng-class="{ active: isActive('/about')}">A propos</a>
     </div>
 
