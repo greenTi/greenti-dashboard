@@ -4,7 +4,7 @@
     
     <div class="grid">
 
-        <div class="col-1-2 col-1-2-m col-1-1-s">
+        <div class="col-1-3 col-1-1-m col-1-1-s">
             <div class="card">
                 <div class="card-header">-12kg de déchets!</div>
                 <div class="card-line card-img">
@@ -19,11 +19,15 @@
             </div>
         </div>
 
-        <div class="col-1-2 col-1-2-m col-1-1-s">
+        <div class="col-1-3 col-1-2-m col-1-1-s">
             <div class="card">
                 <div class="card-header">Ajoutés récemment</div>
-                <div class="card-line" ng-repeat="item in [{name: 'Chocolat'},{name: 'Whisky'}]">
-                    {{item.name}}
+                <div class="card-line" ng-repeat="item in shoppingList.list">
+                    <input type="checkbox" ng-model="item.checked">
+                    {{ item.title }}
+                    <small>
+                        {{ item.code }}
+                    </small>
                 </div>
                 <a class="card-line card-divider card-hoverable" href="#!/cart">
                     Voir la liste complete...
@@ -31,17 +35,7 @@
             </div>
         </div>
 
-        <div class="col-1-1">
-            <div class="card">
-                <div class="card-header">
-                    Statistiques
-                </div>
-                <div class="card-line"></div>
-
-            </div>
-        </div>
-
-        <div class="col-1-2 push-1-4 col-1-2-m push-1-4-m col-1-1-s push-0-s">
+        <div class="col-1-3 col-1-2-m col-1-1-s">
             <div class="card">
                 <div class="card-header">Votre premier vélo!</div>
                 <div class="card-line">
@@ -50,6 +44,19 @@
                 <div class="card-line card-divider card-hoverable" ng-click="alert('not implemented')">
                     Partager
                 </div>
+            </div>
+        </div>
+
+        
+        <div class="col-1-1">
+            <div class="card">
+                <div class="card-header">
+                    Statistiques
+                </div>
+                <div class="card-line">
+                    <canvas class="chart chart-line" chart-data="chart.data" chart-labels="chart.labels" chart-series="chart.series"></canvas>
+                </div>
+
             </div>
         </div>
 
