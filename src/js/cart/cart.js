@@ -9,9 +9,13 @@ cart.config(['$routeProvider', function($routeProvider) {
 
 }])
 
-cart.controller('cartCtrl', ['$scope', function($scope) {
+cart.controller('cartCtrl', ['$scope', 'shoppingListFactory', function($scope, shoppingListFactory) {
     console.log('cartCtrl -- Started')
     $scope.pageClass = 'page-cart'
+
+    $scope.shoppingList = shoppingListFactory
+    $scope.shoppingList.fetch()
+
 
 }])
 

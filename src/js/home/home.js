@@ -37,9 +37,9 @@ home.controller('homeCtrl', ['$scope', 'shoppingListFactory', function($scope, s
       ]
     }
 
-    $scope.shoppingList = shoppingListFactory;
+    $scope.shoppingList = shoppingListFactory
 
-    $scope.shoppingList.fetch();
+    $scope.shoppingList.fetch()
 
 }])
 
