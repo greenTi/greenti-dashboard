@@ -22,12 +22,14 @@
         <div class="col-1-3 col-1-2-m col-1-1-s">
             <div class="card">
                 <div class="card-header">Ajoutés récemment</div>
-                <div class="card-line" ng-repeat="item in shoppingList.list | limitTo: 3">
-                    <input type="checkbox" ng-model="item.checked">
-                    {{ item.title }}
-                    <small>
-                        {{ item.code }}
-                    </small>
+                <div class="card-line icon-left" ng-repeat="item in shoppingList.list | limitTo: 3">
+                    <i class="left-icon fa fa-check fa-lg text-green" ng-show="item.checked"></i>
+                    <h4>{{ item.title }}</h4>
+                    <div class="text-right text-gray">
+                        <small>
+                            {{ item.code }}
+                        </small>
+                    </div>
                 </div>
                 <a class="card-line card-divider card-hoverable" href="#!/cart">
                     Voir la liste complete...

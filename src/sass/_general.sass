@@ -37,5 +37,32 @@ body
                 transform: translateX($sidebar-width)
                 
 
+    
 
 
+// colors
+
+$colors : "dark" $dark, "white" $white, "silver" $silver, "gray" $gray, "green" $green, "pink" $pink 
+
+@each $color in $colors
+    .text-#{nth($color, 1)}
+        color: nth($color, 2)
+    .bg-#{nth($color, 1)}
+        background-color: nth($color, 2)
+
+// quick settings
+
+.text-right
+    text-align: right
+.text-center
+    text-align: center
+.text-left
+    text-align: left
+
+
+small
+    font-weight: 100
+    font-size: .7em
+
+.transparent
+    opacity: .4

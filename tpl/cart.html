@@ -1,15 +1,22 @@
 <header>Ma Liste de courses</header>
 <div class="content">
     <div class="grid">
-        <div class="col-1-1">
+        <div class="col-1-2 push-1-4 col-2-3-m push-1-6-m col-1-1-s push-0-s">
             <div class="card">
-                <div class="card-header">Ajoutés récemment</div>
-                <div class="card-line" ng-repeat="item in shoppingList.list">
-                    <input type="checkbox" ng-model="item.checked">
-                    {{ item.title }}
-                    <small>
-                        {{ item.code }}
-                    </small>
+                <div class="card-header">Liste de courses</div>
+                <div class="card-line icon-left icon-right" ng-repeat="item in shoppingList.list">
+                    
+                    <i class="left-icon fa fa-2x text-green" ng-class="(item.checked)?'fa-check-circle':'fa-circle transparent'"></i>
+                    
+                    <h3>{{ item.title }}</h3>
+                    <div class="text-right text-silver">
+                        <small>
+                            {{ item.code }}
+                        </small>
+                    </div>
+                    
+                    <i class="right-icon fa fa-cog fa-lg text-gray"></i>
+
                 </div>
             </div>
         </div>
