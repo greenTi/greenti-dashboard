@@ -9,13 +9,26 @@ cart.config(['$routeProvider', function($routeProvider) {
 
 }])
 
-cart.controller('cartCtrl', ['$scope', 'shoppingListFactory', function($scope, shoppingListFactory) {
+cart.controller('cartCtrl', ['$scope', 'shoppingListFactory', 'ngDialog', function($scope, shoppingListFactory, ngDialog) {
     console.log('cartCtrl -- Started')
     $scope.pageClass = 'page-cart'
 
     $scope.shoppingList = shoppingListFactory
     $scope.shoppingList.fetch()
 
+    $scope.addToCartModal = function() {
+      ngDialog.open({
+        template: "tpl/addToCartDialog.html",
+        controller: ['$scope', function($scope) {
+          console.log('modal openned', $scope.pageClass)
+        }],
+        scope:$scope,
+        overlay: true,
+        showClose: false,
+        closeByEscape: false,
+      })
+    }
+    
 
 }])
 

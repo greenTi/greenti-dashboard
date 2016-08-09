@@ -1,0 +1,72 @@
+.ngdialog
+  box-sizing: border-box
+  *
+    box-sizing: inherit
+    &:before, &:after
+      box-sizing: inherit
+  position: fixed
+  overflow: auto
+  z-index: 10000
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+.ngdialog-overlay
+  position: fixed
+  background: rgba($dark, 0.3)
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+
+.ngdialog-no-overlay
+  pointer-events: none
+
+.ngdialog-content
+  // background: $white
+  animation: ngdialog-enter 0.5s
+  pointer-events: all
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  width: $small-size
+  max-width: 95%
+  overflow: hidden
+
+.ngdialog.ngdialog-closing .ngdialog-content
+  animation: ngdialog-leave 0.5s
+
+.ngdialog-close
+  cursor: pointer
+  position: absolute
+  top: 0
+  right: 0
+  width: 20px
+  height: 20px
+  &:before
+    font-family: sans-serif
+    content: '\00D7'
+  
+
+html.ngdialog-open, body.ngdialog-open
+  overflow: hidden
+
+
+@keyframes ngdialog-leave
+  0%
+    opacity: 1
+    margin-top: 0
+  100%
+    opacity: 0
+    margin-top: -20px
+
+@keyframes ngdialog-enter
+  0%
+    opacity: 0
+    margin-top: -20px
+
+  100%
+    opacity: 1
+    margin-top: 0

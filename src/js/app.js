@@ -5,6 +5,7 @@ require('angular-animate')
 
 require('chart.js')
 require('angular-chart.js')
+require('ng-dialog')
 
 // dashboard deps
 require("./menu.js")
@@ -19,6 +20,7 @@ require("./about/about.js")
 var dashboard = angular.module('dashboard', [
     'ngRoute',
     'ngAnimate',
+    'ngDialog',
 
     'chart.js',
 
