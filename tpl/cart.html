@@ -5,10 +5,17 @@
 
         <div class="col-1-2 push-1-4 col-2-3-m push-1-6-m col-1-1-s push-0-s">
             <div class="card">
-                <div class="card-header">Liste de courses</div>
-                <div class="card-line icon-left icon-right" ng-repeat="item in shoppingList.list">
+
+                <div class="card-header icon-right">
+                    Liste de courses 
+                    <i class="right-icon fa fa-refresh fa-lg" ng-class="{'text-gray': !hover, 'text-pink': hover, 'fa-spin' : isLoading}" 
+                        ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+                        ng-click="load()"></i>
+                </div>
+
+                <div class="card-line icon-left icon-right" ng-repeat="item in shoppingList.list track by $index">
                     
-                    <i class="left-icon fa fa-2x text-green" ng-class="(item.checked)?'fa-check-circle':'fa-circle transparent'"></i>
+                    <i class="left-icon fa fa-2x text-green" ng-class="(item.checked)?'fa-check-circle':'fa-circle transparent'" ng-click="toggleCheck($index, !item.checked)"></i>
                     
                     <h3>{{ item.title }}</h3>
                     <div class="text-right text-silver">
@@ -17,7 +24,9 @@
                         </small>
                     </div>
                     
-                    <i class="right-icon fa fa-cog fa-lg text-gray"></i>
+                    <i class="right-icon fa fa-times fa-lg" ng-class="{'text-gray': !hover, 'text-pink': hover}" 
+                        ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+                        ng-click="delete($index)"></i>
 
                 </div>
             </div>

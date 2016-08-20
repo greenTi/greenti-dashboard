@@ -17,6 +17,7 @@
         &.card-header
             font-weight: bold
             // text-align: center
+            font-variant: small-caps
             padding: .8rem 1rem .5rem 1rem
             font-size: 1.3rem
             color: $pink
@@ -64,12 +65,17 @@
         .left-icon, .right-icon
             position: absolute
             left: 0
-            top: 50%
-            transform: translateY(-50%)
+            // top: 50%
+            // transform: translateY(-50%)
+            top: 32%
             width: 65px
             text-align: center
             @media(max-width: $small-size)
                 width: 40px
+            &[ng-click]:hover
+                cursor: pointer
+            // &.fa-spin
+            //     top: 32%
         
         .right-icon
             left: auto

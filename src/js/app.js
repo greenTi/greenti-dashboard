@@ -10,6 +10,7 @@ require('ng-dialog')
 // dashboard deps
 require("./menu.js")
 require('./api.js')
+require('./directives.js')
 
 require("./home/home.js")
 require("./cart/cart.js")
@@ -26,6 +27,7 @@ var dashboard = angular.module('dashboard', [
 
     'dashboard.menu',
     'dashboard.api',
+    'dashboard.directives',
 
     'dashboard.home',
     'dashboard.cart',

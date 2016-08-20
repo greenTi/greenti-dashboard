@@ -34,7 +34,7 @@ api.factory('shoppingListFactory', ['$http', function( $http ) {
      * Return : promise from api call : the full list up to date
      */
     shoppingList.add = function(data) {
-        return $http.post('http://greenti.bzh/api/cart/add', {"title": data.title, "code": data.code, "checked": data.checked}, {
+        return $http.post('http://greenti.bzh/api/cart/add', {"title": data.title, "code": data.code, "checked": data.checked || false}, {
               headers : {'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'}
             })
                 .then( function(res) {
