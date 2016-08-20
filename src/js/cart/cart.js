@@ -23,8 +23,8 @@ cart.controller('cartCtrl', ['$scope', 'shoppingListFactory', 'ngDialog', functi
       $scope.shoppingList.fetch().then(function() {
         $scope.isLoading = false;
       })
-
     }
+    $scope.load() // first call
     
 
 
