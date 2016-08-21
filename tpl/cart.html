@@ -8,12 +8,12 @@
 
                 <div class="card-header icon-right">
                     Liste de courses 
-                    <i class="right-icon fa fa-refresh fa-lg" ng-class="{'text-gray': !hover, 'text-pink': hover, 'fa-spin' : isLoading}" 
-                        ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+                    <i class="right-icon fa fa-refresh fa-lg" ng-class="{'text-gray': !refreshHover, 'text-pink': refreshHover, 'fa-spin' : isLoading}" ng-init="refreshHover = false"
+                        ng-mouseenter="refreshHover = true" ng-mouseleave="refreshHover = false"
                         ng-click="load()"></i>
                 </div>
 
-                <div class="card-line icon-left icon-right" ng-repeat="item in shoppingList.list track by $index">
+                <div class="card-line icon-left icon-right" ng-repeat="item in shoppingList.list track by $index" ng-init="hover = []">
                     
                     <i class="left-icon fa fa-2x text-green" ng-class="(item.checked)?'fa-check-circle':'fa-circle transparent'" ng-click="toggleCheck($index, !item.checked)"></i>
                     
@@ -24,8 +24,8 @@
                         </small>
                     </div>
                     
-                    <i class="right-icon fa fa-times fa-lg" ng-class="{'text-gray': !hover, 'text-pink': hover}" 
-                        ng-mouseenter="hover = true" ng-mouseleave="hover = false"
+                    <i class="right-icon fa fa-times fa-lg" ng-class="{'text-gray': !hover[$index], 'text-pink': hover[$index]}" 
+                        ng-mouseenter="hover[$index] = true" ng-mouseleave="hover[$index] = false"
                         ng-click="delete($index)"></i>
 
                 </div>
