@@ -8,7 +8,8 @@ home.config(['$routeProvider', 'ChartJsProvider', function($routeProvider, Chart
   })
 
   ChartJsProvider.setOptions('line', {
-    chartColors: ['#44aa44', '#bbbbbb'],
+    // chartColors: ['#44aa44', '#bbbbbb'],#A2CB00
+    chartColors: ['#7fb300', '#bbbbbb'],
     legend: {
       display: true,
       position: 'bottom',
